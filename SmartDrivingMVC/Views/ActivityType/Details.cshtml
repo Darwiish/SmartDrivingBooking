@@ -1,0 +1,51 @@
+﻿@model SmartDrivingMVC.Models.ActivityType
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Details</h2>
+<div>
+    <h4>ActivityType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>      
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.VehicleModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.VehicleModel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationDtl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.RegistrationDtl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ActivityTypeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

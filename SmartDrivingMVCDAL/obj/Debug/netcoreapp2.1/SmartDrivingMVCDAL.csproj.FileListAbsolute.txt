@@ -1,0 +1,6 @@
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\SmartDrivingMVCDAL\obj\Debug\netcoreapp2.1\SmartDrivingMVCDAL.csprojAssemblyReference.cache
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\SmartDrivingMVCDAL\obj\Debug\netcoreapp2.1\SmartDrivingMVCDAL.csproj.CoreCompileInputs.cache
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\SmartDrivingMVCDAL\obj\Debug\netcoreapp2.1\SmartDrivingMVCDAL.RazorAssemblyInfo.cache
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\SmartDrivingMVCDAL\obj\Debug\netcoreapp2.1\SmartDrivingMVCDAL.RazorAssemblyInfo.cs
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\SmartDrivingMVCDAL\obj\Debug\netcoreapp2.1\SmartDrivingMVCDAL.AssemblyInfoInputs.cache
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\SmartDrivingMVCDAL\obj\Debug\netcoreapp2.1\SmartDrivingMVCDAL.AssemblyInfo.cs
