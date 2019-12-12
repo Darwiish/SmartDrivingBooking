@@ -12550,11 +12550,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abdir\\Desktop\\SmartDrivingBooking\\SmartDrivingMVC\\SmartDrivingMVC.csproj",
+      "projectUniqueName": "C:\\Users\\abdir\\Desktop\\WebDev\\Bachelor-WebDevelopment\\SmartDrivingBooking\\SmartDrivingMVC\\SmartDrivingMVC.csproj",
       "projectName": "SmartDrivingMVC",
-      "projectPath": "C:\\Users\\abdir\\Desktop\\SmartDrivingBooking\\SmartDrivingMVC\\SmartDrivingMVC.csproj",
+      "projectPath": "C:\\Users\\abdir\\Desktop\\WebDev\\Bachelor-WebDevelopment\\SmartDrivingBooking\\SmartDrivingMVC\\SmartDrivingMVC.csproj",
       "packagesPath": "C:\\Users\\abdir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abdir\\Desktop\\SmartDrivingBooking\\SmartDrivingMVC\\obj\\",
+      "outputPath": "C:\\Users\\abdir\\Desktop\\WebDev\\Bachelor-WebDevelopment\\SmartDrivingBooking\\SmartDrivingMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
