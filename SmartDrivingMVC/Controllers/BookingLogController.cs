@@ -243,5 +243,40 @@ namespace SmartDrivingMVC.Controllers
             return dataContext.BookingLog.Any(e => e.BookingLogId == id);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> UnAssign(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var bookingLog = await dataContext.BookingLog
+                .Include(b => b.Customer)
+                .Include(b => b.Staff)
+                .FirstOrDefaultAsync(m => m.BookingLogId == id);
+            if (bookingLog == null)
+            {
+                return NotFound();
+            }
+
+            //Get currently logged in user
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            int? customerID = GetCustomer(user.Id);
+            if (customerID.HasValue)
+            {
+                var customer = dataContext.Customer.FindAsync(customerID).Result;
+                customer.BookingLogs.Remove(bookingLog);
+                await dataContext.SaveChangesAsync();
+            }
+            
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace SmartDrivingMVC.Models
         public int BookingLogId { get; set; }
         public string CreatedBy { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; }
         public DateTime LastModifiedDate { get; set; }
         public string LastModifiedBy { get; set; }

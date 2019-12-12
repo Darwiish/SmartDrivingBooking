@@ -117,11 +117,6 @@ C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartD
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Customer\Details.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Customer\Edit.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Customer\Index.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\EvaluationType\Create.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\EvaluationType\Delete.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\EvaluationType\Details.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\EvaluationType\Edit.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\EvaluationType\Index.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Evaluation\Create.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Evaluation\Delete.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Evaluation\Details.g.cshtml.cs
@@ -512,11 +507,6 @@ C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartD
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Details.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Edit.g.cshtml.cs
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Index.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Activity\Create.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Activity\Delete.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Activity\Details.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Activity\Edit.g.cshtml.cs
-C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\Activity\Index.g.cshtml.cs
 C:\Users\Bruger\source\repos\SmartDrivingBooking-master\SmartDrivingMVC\bin\Debug\netcoreapp2.1\SmartDrivingMVC.deps.json
 C:\Users\Bruger\source\repos\SmartDrivingBooking-master\SmartDrivingMVC\bin\Debug\netcoreapp2.1\SmartDrivingMVC.runtimeconfig.json
 C:\Users\Bruger\source\repos\SmartDrivingBooking-master\SmartDrivingMVC\bin\Debug\netcoreapp2.1\SmartDrivingMVC.runtimeconfig.dev.json
@@ -636,3 +626,4 @@ C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2
 C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Edit.g.cshtml.cs
 C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Index.g.cshtml.cs
 C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\SmartDrivingMVC.csprojAssemblyReference.cache
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\SmartDrivingMVC.csprojAssemblyReference.cache

@@ -36,44 +36,73 @@
                     <th>
                         @Html.DisplayNameFor(model => model.ActivityType)
                     </th>
+                    @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+                    {
+                        <th>
+                            @Html.DisplayNameFor(model => model.Customer)
+                        </th>
+                    }
                     <th>
-                        @Html.DisplayNameFor(model => model.Customer)
-
+                        @Html.DisplayNameFor(model => model.ActivityType.StartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ActivityType.EndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ActivityType.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ActivityType.Vehicle.VehicleModel)
                     </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in ViewBag.AvailableBookings as List<BookingLog>)
                 {
-                    <tr>
+                <tr>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Staff.FirstName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ActivityType.Title)
-                        </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Staff.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActivityType.Title)
+                    </td>
+                    @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+                    {
                         <td>
                             @Html.DisplayFor(modelItem => item.Customer.FirstName)
                         </td>
-                        @*<td>
-                                @foreach (var activityType in item.ActivityType)
-                                {
-                                    @Html.DisplayFor(modelItem => activityType.StartDate)
-                                    @Html.DisplayFor(modelItem => activityType.Title)
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActivityType.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActivityType.EndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActivityType.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActivityType.Vehicle.VehicleModel)
+                    </td>
+                    @*<td>
+            @foreach (var activityType in item.ActivityType)
+            {
+                @Html.DisplayFor(modelItem => activityType.StartDate)
+                @Html.DisplayFor(modelItem => activityType.Title)
 
-                                }
-                            </td>*@
-                        <td>
-                            <a asp-action="Select" class="btn btn-primary" asp-route-id="@item.BookingLogId">Select</a>
-                        </td>
-                    </tr>
+            }
+        </td>*@
+                    <td>
+                        <a asp-action="Select" class="btn btn-primary" asp-route-id="@item.BookingLogId">Select</a>
+                    </td>
+                </tr>
                 }
 
             </tbody>
         </table>
     }
-    <h3>Bookings:</h3>
+    <h2>Bookings:</h2>
     <table class="table table-striped">
 
         <thead>
@@ -104,39 +133,45 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Staff.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ActivityType.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ActivityType.StartDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ActivityType.EndDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ActivityType.Price)
-                    </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Staff.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType.Price)
+                </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ActivityType.Vehicle.VehicleModel)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Customer.FirstName)
-                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType.Vehicle.VehicleModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
 
-                    @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
-                    {
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.BookingLogId">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.BookingLogId">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.BookingLogId">Delete</a>
-                        </td>
-                    }
-                </tr>
+                @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.BookingLogId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.BookingLogId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.BookingLogId">Delete</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a asp-action="UnAssign" asp-route-id="@item.BookingLogId">Delete</a>
+                    </td>
+                }
+            </tr>
             }
         </tbody>
     </table>
