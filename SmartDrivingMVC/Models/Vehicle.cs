@@ -7,6 +7,6 @@ namespace SmartDrivingMVC.Models
         public int VehicleId { get; set; }
         public string VehicleModel { get; set; }
         public string RegistrationDtl { get; set; }
-        public virtual ICollection<ActivityType> ActivityType { get; set; }
+        //public virtual ICollection<ActivityType> ActivityType { get; set; }
     }
 }

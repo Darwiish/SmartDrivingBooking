@@ -20,7 +20,7 @@ namespace SmartDrivingMVC.Repository
         {
             using (smartDrivingContext)
             {
-                return smartDrivingContext.Evaluation.Include(x => x.ActivityType).ToList();
+                return smartDrivingContext.Evaluation.Include(x => x.BookingLog).ToList();
             }
         }
 

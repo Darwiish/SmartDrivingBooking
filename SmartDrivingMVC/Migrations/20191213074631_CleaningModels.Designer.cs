@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartDrivingMVCDAL.Data;
 
 namespace SmartDrivingMVC.Migrations
 {
     [DbContext(typeof(SmartDrivingContext))]
-    partial class SmartDrivingContextModelSnapshot : ModelSnapshot
+    [Migration("20191213074631_CleaningModels")]
+    partial class CleaningModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -282,7 +284,7 @@ namespace SmartDrivingMVC.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BookingLogId");
+                    b.Property<int>("ActivityTypeId");
 
                     b.Property<string>("Description");
 
@@ -292,7 +294,7 @@ namespace SmartDrivingMVC.Migrations
 
                     b.HasKey("EvaluationId");
 
-                    b.HasIndex("BookingLogId");
+                    b.HasIndex("ActivityTypeId");
 
                     b.ToTable("Evaluation");
                 });
@@ -407,7 +409,7 @@ namespace SmartDrivingMVC.Migrations
             modelBuilder.Entity("SmartDrivingMVC.Models.ActivityType", b =>
                 {
                     b.HasOne("SmartDrivingMVC.Models.Vehicle", "Vehicle")
-                        .WithMany()
+                        .WithMany("ActivityType")
                         .HasForeignKey("VehicleId");
                 });
 
@@ -435,9 +437,10 @@ namespace SmartDrivingMVC.Migrations
 
             modelBuilder.Entity("SmartDrivingMVC.Models.Evaluation", b =>
                 {
-                    b.HasOne("SmartDrivingMVC.Models.BookingLog", "BookingLog")
+                    b.HasOne("SmartDrivingMVC.Models.ActivityType", "ActivityType")
                         .WithMany()
-                        .HasForeignKey("BookingLogId");
+                        .HasForeignKey("ActivityTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SmartDrivingMVC.Models.Staff", b =>

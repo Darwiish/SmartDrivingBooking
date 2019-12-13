@@ -8,8 +8,11 @@ namespace SmartDrivingMVC.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string Resulte { get; set; }
-        public int ActivityTypeId { get; set; }
-        [ForeignKey("ActivityTypeId")]
-        public virtual ActivityType ActivityType { get; set; }
+        //public int? ActivityTypeId { get; set; }
+        //[ForeignKey("ActivityTypeId")]
+        //public virtual ActivityType ActivityType { get; set; }
+        public int? BookingLogId { get; set; }
+        [ForeignKey("BookingLogId")]
+        public virtual BookingLog BookingLog { get; set; }
     }
 }

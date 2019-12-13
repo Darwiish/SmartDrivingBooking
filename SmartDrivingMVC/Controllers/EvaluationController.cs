@@ -20,7 +20,7 @@ namespace SmartDrivingMVC.Controllers
         // GET: Evaluations
         public async Task<IActionResult> Index()
         {
-            var smartDrivingContext = dataContext.Evaluation.Include(e => e.ActivityType);
+            var smartDrivingContext = dataContext.Evaluation.Include(e => e.BookingLog);
             return View(await smartDrivingContext.ToListAsync());
         }
 
@@ -33,7 +33,7 @@ namespace SmartDrivingMVC.Controllers
             }
 
             var evaluation = await dataContext.Evaluation
-                .Include(e => e.ActivityType)
+                .Include(e => e.BookingLog)
                 .FirstOrDefaultAsync(m => m.EvaluationId == id);
             if (evaluation == null)
             {
@@ -46,7 +46,7 @@ namespace SmartDrivingMVC.Controllers
         // GET: Evaluations/Create
         public IActionResult Create()
         {
-            ViewData["ActivityTypeId"] = new SelectList(dataContext.ActivityType, "ActivityTypeId", "Title");
+            ViewData["BookingLogId"] = new SelectList(dataContext.BookingLog, "BookingLogId", "CustomerId");
             return View();
         }
 
@@ -55,7 +55,7 @@ namespace SmartDrivingMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EvaluationId,Resulte,Title,Description,ActivityTypeId")] Evaluation evaluation)
+        public async Task<IActionResult> Create([Bind("EvaluationId,Resulte,Title,Description,BookingLogId")] Evaluation evaluation)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace SmartDrivingMVC.Controllers
                 await dataContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ActivityTypeId"] = new SelectList(dataContext.ActivityType, "ActivityTypeId", "Title", evaluation.ActivityTypeId);
+            ViewData["BookingLogId"] = new SelectList(dataContext.BookingLog, "BookingLogId", "CustomerId", evaluation.BookingLogId);
             return View(evaluation);
         }
 
@@ -80,7 +80,7 @@ namespace SmartDrivingMVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["ActivityTypeId"] = new SelectList(dataContext.ActivityType, "ActivityTypeId", "Title", evaluation.ActivityTypeId);
+            ViewData["BookingLogId"] = new SelectList(dataContext.BookingLog, "BookingLogId", "CustomerId", evaluation.BookingLogId);
             return View(evaluation);
         }
 
@@ -89,7 +89,7 @@ namespace SmartDrivingMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EvaluationId,Resulte,Title,Description,ActivityTypeId")] Evaluation evaluation)
+        public async Task<IActionResult> Edit(int id, [Bind("EvaluationId,Resulte,Title,Description,BookingLogId")] Evaluation evaluation)
         {
             if (id != evaluation.EvaluationId)
             {
@@ -116,7 +116,7 @@ namespace SmartDrivingMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ActivityTypeId"] = new SelectList(dataContext.ActivityType, "ActivityTypeId", "Title", evaluation.ActivityTypeId);
+            ViewData["BookingLogId"] = new SelectList(dataContext.BookingLog, "BookingLogId", "CustomerId", evaluation.BookingLogId);
             return View(evaluation);
         }
 
@@ -129,7 +129,7 @@ namespace SmartDrivingMVC.Controllers
             }
 
             var evaluation = await dataContext.Evaluation
-                .Include(e => e.ActivityType)
+                .Include(e => e.BookingLog)
                 .FirstOrDefaultAsync(m => m.EvaluationId == id);
             if (evaluation == null)
             {

@@ -8,6 +8,7 @@ namespace SmartDrivingMVC.Models
     public class Customer
     {
         public int CustomerId { get; set; }
+        public string AspNetUserId { get; set; }
         [StringLength(50)]
         [Required]
         [Display(Name = "First Name")]
@@ -24,7 +25,7 @@ namespace SmartDrivingMVC.Models
         [StringLength(100)]
         [Display(Name = "Street")]
         public string Street { get; set; }
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required]
         [Display(Name = "Birth Date")]
@@ -32,15 +33,10 @@ namespace SmartDrivingMVC.Models
         [StringLength(100)]
         [Display(Name = "Mobile Phone")]
         public string MobilePhone { get; set; }
-
-
         public int? PostalDistrictId { get; set; }
         [ForeignKey("PostalDistrictId")]
         public virtual PostalDistrict PostalDistrict { get; set; }
-
         public virtual ICollection<BookingLog> BookingLogs { get; set; }
-
-        public string AspNetUserId { get; set; }
 
         [Display(Name = "Full Name")]
         public string FullName

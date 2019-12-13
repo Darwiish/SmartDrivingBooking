@@ -80,7 +80,7 @@ namespace SmartDrivingMVC.Controllers
                     break;
             }
 
-            int pageSize = 25;
+            int pageSize = 5;
             return View(await PaginatedList<Customer>.CreateAsync(customers.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 

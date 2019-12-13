@@ -43,9 +43,9 @@
                         @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
                         {
                             <li><a asp-area="" asp-controller="Customer" asp-action="Index">Customer</a></li>
-                            @*<li><a asp-area="" asp-controller="ActivityType" asp-action="Index">ActivityType</a></li>
+                            <li><a asp-area="" asp-controller="ActivityType" asp-action="Index">ActivityType</a></li>
                                 <li><a asp-area="" asp-controller="Evaluation" asp-action="Index">Evaluation</a></li>
-                                <li><a asp-area="" asp-controller="Vehicle" asp-action="Index">Vehicle</a></li>*@
+                                <li><a asp-area="" asp-controller="Vehicle" asp-action="Index">Vehicle</a></li>
 
                         }
                     }

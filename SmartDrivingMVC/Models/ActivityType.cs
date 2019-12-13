@@ -18,9 +18,6 @@ namespace SmartDrivingMVC.Models
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
-        //public int? BookingLogId { get; set; }
-        //[ForeignKey("BookingLogId")]
-        //public virtual BookingLog BookingLog { get; set; }
         public int? VehicleId { get; set; }
         [ForeignKey("VehicleId")]
         public virtual Vehicle Vehicle { get; set; }

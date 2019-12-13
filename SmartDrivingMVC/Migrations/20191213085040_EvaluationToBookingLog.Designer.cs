@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartDrivingMVCDAL.Data;
 
 namespace SmartDrivingMVC.Migrations
 {
     [DbContext(typeof(SmartDrivingContext))]
-    partial class SmartDrivingContextModelSnapshot : ModelSnapshot
+    [Migration("20191213085040_EvaluationToBookingLog")]
+    partial class EvaluationToBookingLog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
