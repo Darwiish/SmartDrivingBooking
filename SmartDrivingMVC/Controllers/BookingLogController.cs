@@ -67,7 +67,7 @@ namespace SmartDrivingMVC.Controllers
 
         private int? GetCustomer(string userID) => dataContext.Customer.Where(c => c.AspNetUserId == userID).FirstOrDefault()?.CustomerId;
 
-        // GET: Bookings/Delete/5
+        // GET: Bookings/Selected/5
         public async Task<IActionResult> Select(int? id)
         {
             if (id == null)

@@ -17,8 +17,6 @@ namespace SmartDrivingMVC.Controllers
         }
         public IActionResult Index()
         {
-            //ViewData["Message"] = smartDrivingContext.Customer.ToListAsync().Result[0].FirstName;
-
             return View();
         }
 

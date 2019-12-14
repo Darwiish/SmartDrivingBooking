@@ -34,8 +34,6 @@ namespace SmartDrivingMVC.Controllers
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            //var context = dataContext.Customer.Include(b => b.PostalDistrict.Zipcode).ToListAsync();
-
             //Check if its an Admin account
             bool isAdmin = await _userManager.IsInRoleAsync(user, "admin");
             if (!isAdmin)
@@ -58,7 +56,7 @@ namespace SmartDrivingMVC.Controllers
 
             ViewData["CurrentFilter"] = searchString;
 
-            var customers = from s in dataContext.Customer/*.Include(b => b.PostalDistrict.Zipcode)*/
+            var customers = from s in dataContext.Customer
                             select s;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -84,27 +82,6 @@ namespace SmartDrivingMVC.Controllers
             int pageSize = 5;
             return View(await PaginatedList<Customer>.CreateAsync(customers.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
-
-        // GET: Customers
-        //public async Task<IActionResult> Index()
-        //{
-        //    //Get currently logged in user
-        //    var user = await _userManager.GetUserAsync(User);
-        //    if (user == null)
-        //    {
-        //        return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-        //    }
-
-        //    var context = dataContext.Customer.Include(b => b.PostalDistrict.Zipcode).ToListAsync();
-
-        //    //Check if its an Admin account
-        //    bool isAdmin = await _userManager.IsInRoleAsync(user, "admin");
-        //    if (!isAdmin)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(await dataContext.Customer.ToListAsync());
-        //}
 
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
