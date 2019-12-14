@@ -25,11 +25,13 @@ namespace SmartDrivingMVC.Models
         [StringLength(100)]
         [Display(Name = "Street")]
         public string Street { get; set; }
-        [DataType(DataType.DateTime)]
+
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required]
         [Display(Name = "Birth Date")]
         public DateTime DateBirth { get; set; }
+
         [StringLength(100)]
         [Display(Name = "Mobile Phone")]
         public string MobilePhone { get; set; }

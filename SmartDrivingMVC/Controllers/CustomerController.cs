@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SmartDrivingMVC.Models;
 using SmartDrivingMVCDAL.Data;
@@ -57,17 +58,17 @@ namespace SmartDrivingMVC.Controllers
 
             ViewData["CurrentFilter"] = searchString;
 
-            var customers = from s in dataContext.Customer/*Include(b => b.PostalDistrict.Zipcode)*/
+            var customers = from s in dataContext.Customer/*.Include(b => b.PostalDistrict.Zipcode)*/
                             select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                customers = customers.Where(s => s.LastName.Contains(searchString)
-                                       || s.FirstName.Contains(searchString));
+                customers = customers.Where(s => s.FirstName.Contains(searchString)
+                                       || s.LastName.Contains(searchString));
             }
             switch (sortOrder)
             {
                 case "name_desc":
-                    customers = customers.OrderByDescending(s => s.LastName);
+                    customers = customers.OrderByDescending(s => s.FirstName);
                     break;
                 case "Date":
                     customers = customers.OrderBy(s => s.DateBirth);
@@ -76,7 +77,7 @@ namespace SmartDrivingMVC.Controllers
                     customers = customers.OrderByDescending(s => s.DateBirth);
                     break;
                 default:
-                    customers = customers.OrderBy(s => s.LastName);
+                    customers = customers.OrderBy(s => s.FirstName);
                     break;
             }
 
@@ -114,6 +115,7 @@ namespace SmartDrivingMVC.Controllers
             }
 
             var customer = await dataContext.Customer
+                .Include(a => a.PostalDistrict)
                 .FirstOrDefaultAsync(m => m.CustomerId == id);
             if (customer == null)
             {
@@ -126,6 +128,7 @@ namespace SmartDrivingMVC.Controllers
         // GET: Customers/Create
         public IActionResult Create()
         {
+            ViewData["PostalDistrictId"] = new SelectList(dataContext.PostalDistrict, "PostalDistrictId", "Zipcode");
             return View();
         }
 
@@ -134,7 +137,7 @@ namespace SmartDrivingMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,FirstName,LastName,EmailAddress,Street,DateBirth,MobilePhone")] Customer customer)
+        public async Task<IActionResult> Create([Bind("CustomerId,FirstName,LastName,EmailAddress,Street,DateBirth,MobilePhone,PostalDistrictId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -142,6 +145,7 @@ namespace SmartDrivingMVC.Controllers
                 await dataContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PostalDistrictId"] = new SelectList(dataContext.PostalDistrict, "PostalDistrictId", "Zipcode");
             return View(customer);
         }
 
@@ -158,6 +162,7 @@ namespace SmartDrivingMVC.Controllers
             {
                 return NotFound();
             }
+            ViewData["PostalDistrictId"] = new SelectList(dataContext.PostalDistrict, "PostalDistrictId", "Zipcode");
             return View(customer);
         }
 
@@ -166,7 +171,7 @@ namespace SmartDrivingMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,EmailAddress,Street,DateBirth,MobilePhone")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,EmailAddress,Street,DateBirth,MobilePhone,PostalDistrictId")] Customer customer)
         {
             if (id != customer.CustomerId)
             {
@@ -193,6 +198,7 @@ namespace SmartDrivingMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PostalDistrictId"] = new SelectList(dataContext.PostalDistrict, "PostalDistrictId", "Zipcode");
             return View(customer);
         }
 

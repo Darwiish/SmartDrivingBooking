@@ -284,11 +284,14 @@ namespace SmartDrivingMVC.Migrations
 
                     b.Property<int?>("BookingLogId");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Resulte");
+                    b.Property<string>("Resulte")
+                        .IsRequired();
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired();
 
                     b.HasKey("EvaluationId");
 

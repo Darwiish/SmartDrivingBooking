@@ -51,7 +51,7 @@ namespace SmartDrivingMVC.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Street")]
             public string Street { get; set; }
-            [Required]
+            [Required]          
             [Display(Name = "DateBirth")]
             public DateTime DateBirth { get; set; }
             [Required]
