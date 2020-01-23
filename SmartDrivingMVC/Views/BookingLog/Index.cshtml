@@ -25,7 +25,7 @@
 
     @if (!await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
     {
-        <h3>Available bookings:</h3>
+        <h2>Available bookings:</h2>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -35,12 +35,6 @@
                     <th>
                         @Html.DisplayNameFor(model => model.ActivityType)
                     </th>
-                    @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
-                    {
-                        <th>
-                            @Html.DisplayNameFor(model => model.Customer)
-                        </th>
-                    }
                     <th>
                         @Html.DisplayNameFor(model => model.ActivityType.StartDate)
                     </th>
@@ -51,8 +45,14 @@
                         @Html.DisplayNameFor(model => model.ActivityType.Price)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ActivityType.Vehicle.VehicleModel)
+                        @Html.DisplayNameFor(model => model.ActivityType.Vehicle)
                     </th>
+                    @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+                    {
+                        <th>
+                            @Html.DisplayNameFor(model => model.Customer)
+                        </th>
+                    }
                 </tr>
             </thead>
             <tbody>
@@ -66,12 +66,6 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ActivityType.Title)
                         </td>
-                        @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
-                        {
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Customer.FirstName)
-                            </td>
-                        }
                         <td>
                             @Html.DisplayFor(modelItem => item.ActivityType.StartDate)
                         </td>
@@ -84,14 +78,13 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ActivityType.Vehicle.VehicleModel)
                         </td>
-                        @*<td>
-                                @foreach (var activityType in item.ActivityType)
-                                {
-                                    @Html.DisplayFor(modelItem => activityType.StartDate)
-                                    @Html.DisplayFor(modelItem => activityType.Title)
+                        <td>
+                            @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+                            {
+                                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                            }
+                        </td>
 
-                                }
-                            </td>*@
                         <td>
                             <a asp-action="Select" class="btn btn-primary" asp-route-id="@item.BookingLogId">Select</a>
                         </td>
@@ -125,7 +118,11 @@
                     @Html.DisplayNameFor(model => model.ActivityType.Vehicle)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Customer)
+                    @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+
+                    {
+                        @Html.DisplayNameFor(model => model.Customer)
+                    }
                 </th>
             </tr>
         </thead>
@@ -153,7 +150,10 @@
                         @Html.DisplayFor(modelItem => item.ActivityType.Vehicle.VehicleModel)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                        @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))
+                        {
+                            @Html.DisplayFor(modelItem => item.Customer.FullName)
+                        }
                     </td>
 
                     @if (await UserManager.IsInRoleAsync(UserManager.FindByIdAsync(UserManager.GetUserId(User)).Result, "admin"))

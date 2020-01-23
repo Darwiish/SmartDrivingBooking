@@ -274,8 +274,9 @@ namespace SmartDrivingMVC.Controllers
                 customer.BookingLogs.Remove(bookingLog);
                 await dataContext.SaveChangesAsync();
             }
-            
-            return RedirectToAction(nameof(Index));
+
+            return RedirectToAction(
+                );
         }
 
     }

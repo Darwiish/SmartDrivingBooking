@@ -626,4 +626,7 @@ C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2
 C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Edit.g.cshtml.cs
 C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\Razor\Views\BookingLog\Index.g.cshtml.cs
 C:\Users\abdir\Desktop\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\SmartDrivingMVC.csprojAssemblyReference.cache
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\bin\Debug\netcoreapp2.1\wwwroot\Content\css\Form.css
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\bin\Debug\netcoreapp2.1\wwwroot\Content\css\site.css
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\bin\Debug\netcoreapp2.1\wwwroot\Content\css\site.min.css
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Debug\netcoreapp2.1\SmartDrivingMVC.csprojAssemblyReference.cache

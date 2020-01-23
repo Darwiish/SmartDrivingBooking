@@ -4,8 +4,8 @@ body {
 }
 
 .home-page {
-    /*padding: 50px;*/
-    background: url(../images/drive.jpg) no-repeat center center;
+    padding: 50px;
+    background: url(/Content/images/drive.jpg) no-repeat center center;
     background-color: rgba(128, 128, 128,.9);
     background-size: cover;
     background-blend-mode: multiply;

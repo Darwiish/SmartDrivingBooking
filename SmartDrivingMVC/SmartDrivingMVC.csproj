@@ -13,11 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\images\drive.jpg" />
+    <Content Remove="wwwroot\Content\images\drive.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\drive.jpg" />
+    <None Include="wwwroot\Content\images\drive.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +34,15 @@
   <ItemGroup>
     <Content Update="Areas\MyFeature\Pages\Page1.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="wwwroot\Content\css\Form.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Content\css\site.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Content\css\site.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

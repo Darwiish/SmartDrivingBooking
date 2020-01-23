@@ -101,3 +101,6 @@ C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartD
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Release\netcoreapp2.1\SmartDrivingMVC.dll
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Release\netcoreapp2.1\SmartDrivingMVC.pdb
 C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\obj\Release\netcoreapp2.1\SmartDrivingMVC.csproj.CopyComplete
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\bin\Release\netcoreapp2.1\wwwroot\Content\css\Form.css
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\bin\Release\netcoreapp2.1\wwwroot\Content\css\site.css
+C:\Users\abdir\Desktop\WebDev\Bachelor-WebDevelopment\SmartDrivingBooking\SmartDrivingMVC\bin\Release\netcoreapp2.1\wwwroot\Content\css\site.min.css
